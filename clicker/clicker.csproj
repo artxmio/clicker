@@ -8,4 +8,38 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="source\images\logwin\github_logo.png" />
+    <None Remove="source\images\logwin\lock.png" />
+    <None Remove="source\images\logwin\logo.png" />
+    <None Remove="source\images\logwin\logo_telegram.png" />
+    <None Remove="source\images\logwin\user.png" />
+    <None Remove="source\images\logwin\youtube_logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="source\images\logwin\github_logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="source\images\logwin\lock.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="source\images\logwin\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="source\images\logwin\logo_telegram.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="source\images\logwin\user.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="source\images\logwin\youtube_logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
 </Project>
