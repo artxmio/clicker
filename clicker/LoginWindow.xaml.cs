@@ -23,5 +23,23 @@ namespace clicker
         {
             InitializeComponent();
         }
+
+        private void sing_in_Click(object sender, RoutedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(log_box.Text))
+            {
+                warning.Content = "Warning: Login field is empty";
+                return;
+            }
+            if (String.IsNullOrEmpty(pass_box.Password))
+            {
+                warning.Content = "Warning: Password field is empty";
+                return;
+            }
+
+            var main_window = new MainWindow();
+            main_window.Show();
+            this.Close();
+        }
     }
 }

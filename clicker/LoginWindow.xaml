@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:clicker"
         mc:Ignorable="d"
-        Title="Login" Height="300" Width="400"
-        FontSize="20">
-    <Grid>
+        Title="Login" Height="320" Width="400"
+        FontSize="20" Background="Black"
+        WindowStartupLocation="CenterScreen">
+    <Grid  Background="White">
         <Grid.Margin>10</Grid.Margin>
 
         <!--Структура-->
@@ -35,14 +36,13 @@
             <Grid.Row>1</Grid.Row>
             <TextBlock.FontSize>18</TextBlock.FontSize>
             <TextBlock.Margin>50 10 5 10</TextBlock.Margin>
-            <TextBlock.Text>Login: </TextBlock.Text>
+            <TextBlock.Text>Login:</TextBlock.Text>
         </TextBlock>
-        <TextBox>
+        <TextBox x:Name="log_box">
             <Grid.Column>1</Grid.Column>
             <Grid.Row>1</Grid.Row>
             <TextBox.FontSize>17</TextBox.FontSize>
             <TextBox.Height>30</TextBox.Height>
-            <TextBox.ToolTip>Your login</TextBox.ToolTip>
             <TextBox.Margin>10 10 50 10</TextBox.Margin>
             <TextBox.Padding>2</TextBox.Padding>
             <TextBox.MaxLength>16</TextBox.MaxLength>
@@ -52,11 +52,11 @@
             <Grid.Column>0</Grid.Column>
             <Grid.Row>2</Grid.Row>
             <TextBlock.FontSize>18</TextBlock.FontSize>
-            <TextBlock.Margin>50 10 5 10</TextBlock.Margin>
-            <TextBlock.Text>Password:</TextBlock.Text>
+            <TextBlock.Margin>50 10 0 10</TextBlock.Margin>
+            <TextBlock.Text>Password: </TextBlock.Text>
         </TextBlock>
         
-        <PasswordBox>
+        <PasswordBox x:Name="pass_box">
             <Grid.Column>1</Grid.Column>
             <Grid.Row>2</Grid.Row>
             <PasswordBox.Height>30</PasswordBox.Height>
@@ -64,13 +64,21 @@
             <PasswordBox.MaxLength>10</PasswordBox.MaxLength>
         </PasswordBox>
         <!--Кнопка авторизации-->
-        <Button>
+        <Button IsDefault="True" x:Name="sing_in" Click="sing_in_Click">
             <Grid.ColumnSpan>2</Grid.ColumnSpan>
             <Button.Content>Sing in</Button.Content>
             <Button.Margin>50 50 50 5</Button.Margin>
             <Grid.Row>3</Grid.Row>
         </Button>
 
+        <Label x:Name="warning">
+            <Label.FontSize>13</Label.FontSize>
+            <Label.Foreground>Red</Label.Foreground>
+            <Label.Margin>50 10 50 45</Label.Margin>
+            <Grid.ColumnSpan>2</Grid.ColumnSpan>
+            <Grid.Row>3</Grid.Row>
+        </Label>
+        
     </Grid>
 
 </Window>
