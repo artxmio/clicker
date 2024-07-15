@@ -1,0 +1,76 @@
+﻿<Window x:Class="clicker.login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:clicker"
+        mc:Ignorable="d"
+        Title="Login" Height="300" Width="400"
+        FontSize="20">
+    <Grid>
+        <Grid.Margin>10</Grid.Margin>
+
+        <!--Структура-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="65*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!--Элементы-->
+        <TextBlock>
+            <Grid.ColumnSpan>2</Grid.ColumnSpan>
+            <TextBlock.Text>Authorization</TextBlock.Text>
+            <TextBlock.HorizontalAlignment>Center</TextBlock.HorizontalAlignment>
+            <TextBlock.VerticalAlignment>Center</TextBlock.VerticalAlignment>
+        </TextBlock>
+        <!--Логин-->
+        <TextBlock>
+            <Grid.Column>0</Grid.Column>
+            <Grid.Row>1</Grid.Row>
+            <TextBlock.FontSize>18</TextBlock.FontSize>
+            <TextBlock.Margin>50 10 5 10</TextBlock.Margin>
+            <TextBlock.Text>Login: </TextBlock.Text>
+        </TextBlock>
+        <TextBox>
+            <Grid.Column>1</Grid.Column>
+            <Grid.Row>1</Grid.Row>
+            <TextBox.FontSize>17</TextBox.FontSize>
+            <TextBox.Height>30</TextBox.Height>
+            <TextBox.ToolTip>Your login</TextBox.ToolTip>
+            <TextBox.Margin>10 10 50 10</TextBox.Margin>
+            <TextBox.Padding>2</TextBox.Padding>
+            <TextBox.MaxLength>16</TextBox.MaxLength>
+        </TextBox>
+        <!--Пароль-->
+        <TextBlock>
+            <Grid.Column>0</Grid.Column>
+            <Grid.Row>2</Grid.Row>
+            <TextBlock.FontSize>18</TextBlock.FontSize>
+            <TextBlock.Margin>50 10 5 10</TextBlock.Margin>
+            <TextBlock.Text>Password:</TextBlock.Text>
+        </TextBlock>
+        
+        <PasswordBox>
+            <Grid.Column>1</Grid.Column>
+            <Grid.Row>2</Grid.Row>
+            <PasswordBox.Height>30</PasswordBox.Height>
+            <PasswordBox.Margin>10 10 50 10</PasswordBox.Margin>
+            <PasswordBox.MaxLength>10</PasswordBox.MaxLength>
+        </PasswordBox>
+        <!--Кнопка авторизации-->
+        <Button>
+            <Grid.ColumnSpan>2</Grid.ColumnSpan>
+            <Button.Content>Sing in</Button.Content>
+            <Button.Margin>50 50 50 5</Button.Margin>
+            <Grid.Row>3</Grid.Row>
+        </Button>
+
+    </Grid>
+
+</Window>
