@@ -11,7 +11,8 @@
         FontFamily="Yu Gothic UI Semibold" 
         Background="#FF151515" Foreground="Lime" WindowStyle="None"
         ResizeMode="NoResize"
-        MouseDown="window_moving">
+        MouseDown="window_moving"
+        RenderOptions.BitmapScalingMode="HighQuality">
     <Grid>
         <Grid.Margin>0</Grid.Margin>
 
@@ -83,23 +84,33 @@
         <Label x:Name="warning">
             <Label.FontSize>13</Label.FontSize>
             <Label.Foreground>Red</Label.Foreground>
-            <Label.Margin>0,47,71,0</Label.Margin>
-            <Grid.Row>4</Grid.Row>
+            <Label.Margin>0,0,71,0</Label.Margin>
         </Label>
 
         <!--Изображения-->
         <!--User-->
-        <Image Source="/source/images/logwin/user.png" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" Margin="9,39,26,15">
+        <Image Source="/source/images/logwin/user.png" Stretch="Uniform" Margin="9,39,26,15">
             <Grid.Column>2</Grid.Column>
             <Grid.Row>2</Grid.Row>
         </Image>
 
         <!--Lock-->
-        <Image Source="/source/images/logwin/lock.png" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" Margin="10,43,27,19">
+        <Image Source="/source/images/logwin/lock.png" Stretch="Uniform" Margin="10,43,27,19">
             <Grid.Column>2</Grid.Column>
             <Grid.Row>3</Grid.Row>
         </Image>
-        <Image Source="/source/images/logwin/logo.png" RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Left" Height="195" Margin="55,60,0,0" VerticalAlignment="Top" Width="292" Grid.RowSpan="3" Grid.Row="1"/>
+        <Image Source="/source/images/logwin/logo.png" HorizontalAlignment="Left" Height="195" Margin="50,60,0,0" VerticalAlignment="Top" Width="277" Grid.RowSpan="3" Grid.Row="1"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Grid.Row>4</Grid.Row>
+            <Grid.Column>0</Grid.Column>
+            <Image Height="30" Source="/source/images/logwin/logo_telegram.png" Stretch="Fill" Width="30" Margin="10 10 10 10"/>
+            <Image Height="30" Source="/source/images/logwin/inst_logo.png" Stretch="Fill" Width="30" Margin="10 10 10 10"/>
+            <Image Height="30" Source="/source/images/logwin/youtube_logo.png" Stretch="Fill" Width="30" Margin="10 10 10 10"/>
+        </StackPanel>
+
+
+
     </Grid>
 
 </Window>
