@@ -5,83 +5,81 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:clicker"
         mc:Ignorable="d"
-        Title="Login" Height="320" Width="400"
+        Title="Login" Height="375" Width="765"
         FontSize="20"
-        WindowStartupLocation="CenterScreen" FontFamily="Tahoma">
+        WindowStartupLocation="CenterScreen" 
+        FontFamily="Yu Gothic UI Semibold" 
+        Background="#FF151515" Foreground="Lime" WindowStyle="None"
+        ResizeMode="NoResize">
     <Grid>
-        <Grid.Margin>10</Grid.Margin>
+        <Grid.Margin>0</Grid.Margin>
 
         <!--Структура-->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="35*"/>
-            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--Элементы-->
-        <TextBlock>
-            <Grid.ColumnSpan>2</Grid.ColumnSpan>
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Margin="25,5,36,5">
             <TextBlock.Text>Authorization</TextBlock.Text>
-            <TextBlock.HorizontalAlignment>Center</TextBlock.HorizontalAlignment>
-            <TextBlock.VerticalAlignment>Center</TextBlock.VerticalAlignment>
+            <TextBlock.FontSize>45</TextBlock.FontSize>
         </TextBlock>
         <!--Логин-->
         <TextBlock>
-            <Grid.Column>0</Grid.Column>
-            <Grid.Row>1</Grid.Row>
-            <TextBlock.FontSize>18</TextBlock.FontSize>
-            <TextBlock.Margin>50 10 5 10</TextBlock.Margin>
-            <TextBlock.Text>Login:</TextBlock.Text>
-        </TextBlock>
-        <TextBox x:Name="log_box">
             <Grid.Column>1</Grid.Column>
-            <Grid.Row>1</Grid.Row>
+            <Grid.Row>2</Grid.Row>
+            <TextBlock.FontSize>15</TextBlock.FontSize>
+            <TextBlock.Margin>10,22,94,58</TextBlock.Margin>
+            <TextBlock.Text>your login</TextBlock.Text>
+        </TextBlock>
+        <TextBox x:Name="log_box" Grid.Column="1">
+            <Grid.Row>2</Grid.Row>
             <TextBox.FontSize>17</TextBox.FontSize>
-            <TextBox.Height>30</TextBox.Height>
-            <TextBox.Margin>10 10 50 10</TextBox.Margin>
+            <TextBox.Margin>10,47,10,23</TextBox.Margin>
             <TextBox.Padding>2</TextBox.Padding>
             <TextBox.MaxLength>16</TextBox.MaxLength>
         </TextBox>
         <!--Пароль-->
         <TextBlock>
-            <Grid.Column>0</Grid.Column>
-            <Grid.Row>2</Grid.Row>
-            <TextBlock.FontSize>18</TextBlock.FontSize>
-            <TextBlock.Margin>50 10 0 10</TextBlock.Margin>
-            <TextBlock.Text>Password:</TextBlock.Text>
+            <Grid.Column>1</Grid.Column>
+            <Grid.Row>3</Grid.Row>
+            <TextBlock.FontSize>15</TextBlock.FontSize>
+            <TextBlock.Margin>17,18,109,58</TextBlock.Margin>
+            <TextBlock.Text>your password</TextBlock.Text>
         </TextBlock>
 
         <PasswordBox x:Name="pass_box">
             <Grid.Column>1</Grid.Column>
-            <Grid.Row>2</Grid.Row>
+            <Grid.Row>3</Grid.Row>
             <PasswordBox.FontSize>17</PasswordBox.FontSize>
-            <PasswordBox.Height>30</PasswordBox.Height>
-            <PasswordBox.Margin>10 10 50 10</PasswordBox.Margin>
+            <PasswordBox.Margin>10,47,10,23</PasswordBox.Margin>
             <PasswordBox.MaxLength>10</PasswordBox.MaxLength>
             <PasswordBox.Padding>2</PasswordBox.Padding>
         </PasswordBox>
         <!--Кнопка авторизации-->
-        <Button IsDefault="True" x:Name="sing_in" Click="sing_in_Click" >
-            <Grid.ColumnSpan>2</Grid.ColumnSpan>
-            <Button.Content>Sing in</Button.Content>
-            <Button.Margin>50 50 50 5</Button.Margin>
-            <Grid.Row>3</Grid.Row>
+        <Button IsDefault="True" x:Name="sing_in" Click="sing_in_Click" Content="Sing in" Grid.ColumnSpan="2" >
+            <Grid.Column>1</Grid.Column>
+            <Button.Margin>10,17,21,17</Button.Margin>
+
+            <Grid.Row>4</Grid.Row>
         </Button>
 
-        <Label x:Name="warning">
+        <Label x:Name="warning" Grid.Column="1">
             <Label.FontSize>13</Label.FontSize>
             <Label.Foreground>Red</Label.Foreground>
-            <Label.Margin>50 10 50 45</Label.Margin>
-            <Grid.ColumnSpan>2</Grid.ColumnSpan>
+            <Label.Margin>10,10,10,58</Label.Margin>
             <Grid.Row>3</Grid.Row>
         </Label>
-        <Image Grid.Column="1" Margin="200,10,5,10" Grid.Row="2" Source="/lock.png" Stretch="Fill" Width="30" Height="30"/>
-        <Image Grid.Column="1" Margin="200,10,5,10" Grid.Row="1" Source="/user.png" Stretch="Fill" Width="30" Height="30"/>
+
     </Grid>
 
 </Window>

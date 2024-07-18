@@ -10,7 +10,12 @@
 
   <ItemGroup>
     <None Remove="lock.png" />
+    <None Remove="source\images\lock.png" />
     <None Remove="user.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="source\images\lock.png" />
   </ItemGroup>
 
   <ItemGroup>
