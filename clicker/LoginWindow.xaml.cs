@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +24,8 @@ namespace clicker
         public static login Window;
         public login()
         {
-            InitializeComponent();
             Window = this;
+            InitializeComponent();
         }
 
         private void sing_in_Click(object sender, RoutedEventArgs e)
@@ -59,6 +60,22 @@ namespace clicker
         {
             if(Mouse.LeftButton == MouseButtonState.Pressed) 
                 login.Window.DragMove();
+        }
+
+        private void telegram_click(object sender, MouseButtonEventArgs e)
+        {
+            if (Mouse.LeftButton == MouseButtonState.Pressed)
+                Process.Start(new ProcessStartInfo("https://t.me/temikgamecompany") { UseShellExecute = true });
+        }
+        private void inst_click(object sender, MouseButtonEventArgs e)
+        {
+            if (Mouse.LeftButton == MouseButtonState.Pressed)
+                Process.Start(new ProcessStartInfo("https://www.instagram.com/no.needany?igsh=M3hoaHRqMmg1Njlw") { UseShellExecute = true });
+        }
+        private void youtube_click(object sender, MouseButtonEventArgs e)
+        {
+            if (Mouse.LeftButton == MouseButtonState.Pressed)
+                Process.Start(new ProcessStartInfo("https://www.youtube.com/@artxmixx") { UseShellExecute = true });
         }
     }
 }

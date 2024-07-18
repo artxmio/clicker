@@ -43,7 +43,7 @@
             <TextBlock.Margin>10,22,94,58</TextBlock.Margin>
             <TextBlock.Text>your login</TextBlock.Text>
         </TextBlock>
-        <TextBox x:Name="log_box" Grid.Column="1">
+        <TextBox x:Name="log_box" Grid.Column="1" BorderBrush="#FF373E52">
             <Grid.Row>2</Grid.Row>
             <TextBox.FontSize>17</TextBox.FontSize>
             <TextBox.Margin>10,47,10,23</TextBox.Margin>
@@ -62,7 +62,7 @@
         <PasswordBox x:Name="pass_box">
             <Grid.Column>1</Grid.Column>
             <Grid.Row>3</Grid.Row>
-            <PasswordBox.FontSize>17</PasswordBox.FontSize>
+            <PasswordBox.FontSize>15</PasswordBox.FontSize>
             <PasswordBox.Margin>10,47,10,23</PasswordBox.Margin>
             <PasswordBox.MaxLength>10</PasswordBox.MaxLength>
             <PasswordBox.Padding>2</PasswordBox.Padding>
@@ -104,13 +104,10 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Grid.Row>4</Grid.Row>
             <Grid.Column>0</Grid.Column>
-            <Image Height="30" Source="/source/images/logwin/logo_telegram.png" Stretch="Fill" Width="30" Margin="10 10 10 10"/>
-            <Image Height="30" Source="/source/images/logwin/inst_logo.png" Stretch="Fill" Width="30" Margin="10 10 10 10"/>
-            <Image Height="30" Source="/source/images/logwin/youtube_logo.png" Stretch="Fill" Width="30" Margin="10 10 10 10"/>
+            <Image x:Name="telegram_img" Height="30" Source="/source/images/logwin/logo_telegram.png" Stretch="Fill" Width="30" Margin="10 10 10 10" MouseDown="telegram_click"/>
+            <Image x:Name="instagram_img" Height="30" Source="/source/images/logwin/inst_logo.png" Stretch="Fill" Width="30" Margin="10 10 10 10" MouseDown="inst_click"/>
+            <Image x:Name="youtube_img" Height="30" Source="/source/images/logwin/youtube_logo.png" Stretch="Fill" Width="30" Margin="10 10 10 10"  MouseDown="youtube_click"/>
         </StackPanel>
-
-
-
     </Grid>
 
 </Window>
