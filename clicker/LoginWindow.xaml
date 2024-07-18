@@ -83,7 +83,7 @@
         <Label x:Name="warning">
             <Label.FontSize>13</Label.FontSize>
             <Label.Foreground>Red</Label.Foreground>
-            <Label.Margin>35,30,36,17</Label.Margin>
+            <Label.Margin>0,47,71,0</Label.Margin>
             <Grid.Row>4</Grid.Row>
         </Label>
 
@@ -99,6 +99,7 @@
             <Grid.Column>2</Grid.Column>
             <Grid.Row>3</Grid.Row>
         </Image>
+        <Image Source="/source/images/logwin/logo.png" RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Left" Height="195" Margin="55,60,0,0" VerticalAlignment="Top" Width="292" Grid.RowSpan="3" Grid.Row="1"/>
     </Grid>
 
 </Window>
