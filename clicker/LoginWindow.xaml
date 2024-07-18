@@ -10,7 +10,8 @@
         WindowStartupLocation="CenterScreen" 
         FontFamily="Yu Gothic UI Semibold" 
         Background="#FF151515" Foreground="Lime" WindowStyle="None"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        MouseDown="window_moving">
     <Grid>
         <Grid.Margin>0</Grid.Margin>
 
@@ -18,7 +19,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="45*"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
@@ -53,7 +54,7 @@
             <Grid.Column>1</Grid.Column>
             <Grid.Row>3</Grid.Row>
             <TextBlock.FontSize>15</TextBlock.FontSize>
-            <TextBlock.Margin>17,18,109,58</TextBlock.Margin>
+            <TextBlock.Margin>10,18,116,58</TextBlock.Margin>
             <TextBlock.Text>your password</TextBlock.Text>
         </TextBlock>
 
@@ -66,20 +67,38 @@
             <PasswordBox.Padding>2</PasswordBox.Padding>
         </PasswordBox>
         <!--Кнопка авторизации-->
-        <Button IsDefault="True" x:Name="sing_in" Click="sing_in_Click" Content="Sing in" Grid.ColumnSpan="2" >
+        <Button x:Name="sing_in" Click="sing_in_Click" Content="Sing in" Foreground="Lime" Background="#FF1B1B1B" >
             <Grid.Column>1</Grid.Column>
-            <Button.Margin>10,17,21,17</Button.Margin>
-
+            <Button.Margin>10,10,64,24</Button.Margin>
             <Grid.Row>4</Grid.Row>
         </Button>
 
-        <Label x:Name="warning" Grid.Column="1">
+        <!--Кнопка закрытия приложения-->
+        <Button x:Name="exit_button" Click="exit_program" Content="Exit" Foreground="Lime" Background="#FF1B1B1B" Grid.ColumnSpan="2" >
+            <Grid.Column>1</Grid.Column>
+            <Button.Margin>269,10,26,24</Button.Margin>
+            <Grid.Row>4</Grid.Row>
+        </Button>
+
+        <Label x:Name="warning">
             <Label.FontSize>13</Label.FontSize>
             <Label.Foreground>Red</Label.Foreground>
-            <Label.Margin>10,10,10,58</Label.Margin>
-            <Grid.Row>3</Grid.Row>
+            <Label.Margin>35,30,36,17</Label.Margin>
+            <Grid.Row>4</Grid.Row>
         </Label>
 
+        <!--Изображения-->
+        <!--User-->
+        <Image Source="/source/images/logwin/user.png" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" Margin="9,39,26,15">
+            <Grid.Column>2</Grid.Column>
+            <Grid.Row>2</Grid.Row>
+        </Image>
+
+        <!--Lock-->
+        <Image Source="/source/images/logwin/lock.png" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" Margin="10,43,27,19">
+            <Grid.Column>2</Grid.Column>
+            <Grid.Row>3</Grid.Row>
+        </Image>
     </Grid>
 
 </Window>

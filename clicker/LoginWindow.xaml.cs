@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace clicker
@@ -19,9 +20,11 @@ namespace clicker
     /// </summary>
     public partial class login : Window
     {
+        public static login Window;
         public login()
         {
             InitializeComponent();
+            Window = this;
         }
 
         private void sing_in_Click(object sender, RoutedEventArgs e)
@@ -40,6 +43,22 @@ namespace clicker
             var main_window = new MainWindow();
             main_window.Show();
             this.Close();
+        }
+
+        private void exit_program(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        /// <summary>
+        /// Перемешения окна
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void window_moving(object sender, MouseButtonEventArgs e)
+        {
+            if(Mouse.LeftButton == MouseButtonState.Pressed) 
+                login.Window.DragMove();
         }
     }
 }
