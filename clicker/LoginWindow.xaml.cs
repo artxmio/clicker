@@ -66,7 +66,7 @@ namespace clicker
 
         private void close_MouseEnter(object sender, MouseEventArgs e)
         {
-            
+            close.Foreground = Brushes.Red;
         }
 
 
@@ -85,6 +85,11 @@ namespace clicker
             var registration_window = new RegistrationWindow();
             registration_window.Show();
             this.Close();
+        }
+
+        private void close_MouseLeave(object sender, MouseEventArgs e)
+        {
+            close.Foreground = Brushes.Linen;
         }
     }
 }
