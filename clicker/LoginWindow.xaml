@@ -1,11 +1,11 @@
-﻿<Window x:Class="clicker.login"
+﻿<Window x:Class="clicker.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:clicker"
         mc:Ignorable="d"
-        Title="Login" Height="375" Width="765"
+        Title="Login" Height="400" Width="765"
         FontSize="20"
         WindowStartupLocation="CenterScreen" 
         FontFamily="Yu Gothic UI Semibold" 
@@ -13,6 +13,32 @@
         ResizeMode="NoResize"
         MouseDown="window_moving"
         RenderOptions.BitmapScalingMode="HighQuality">
+
+    <Window.Resources>
+        <!--TextBox Style-->
+        <Style x:Key="TextBlockStyle">
+            <Setter Property="Control.Background" Value="#FF1B1B1B"/>
+            <Setter Property="Control.BorderBrush" Value="#FF1B1B1B"/>
+        </Style>
+
+        <!--Reference Image Style-->
+        <Style x:Key="ReferenceImageStyle">
+            <Setter Property="Image.Cursor" Value="Hand"/>
+            <Setter Property="Image.Stretch" Value="Fill"/>
+            <Setter Property="Image.Margin" Value="10"/>
+            <Setter Property="Image.Width" Value="30"/>
+            <Setter Property="Image.Height" Value="30"/>
+        </Style>
+
+        <!--Buttons-->
+        <Style x:Key="ButtonStyle">
+            <Setter Property="Control.Background" Value="#FF1B1B1B"/>
+            <Setter Property="Control.Foreground" Value="#FF00FF00"/>
+            <Setter Property="Control.BorderBrush" Value="#FF1B1B1B"/>
+            <Setter Property="Control.Height" Value="50"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.Margin>0</Grid.Margin>
 
@@ -31,7 +57,7 @@
         </Grid.RowDefinitions>
 
         <!--Элементы-->
-        <TextBlock Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Margin="25,5,36,5">
+        <TextBlock Grid.Column="1" Grid.Row="1" Margin="25,5,10,5">
             <TextBlock.Text>Authorization</TextBlock.Text>
             <TextBlock.FontSize>45</TextBlock.FontSize>
         </TextBlock>
@@ -43,7 +69,8 @@
             <TextBlock.Margin>10,22,94,58</TextBlock.Margin>
             <TextBlock.Text>your login</TextBlock.Text>
         </TextBlock>
-        <TextBox x:Name="log_box" Grid.Column="1" BorderBrush="#FF373E52">
+        <TextBox x:Name="log_box" Grid.Column="1"
+                 Style="{StaticResource TextBlockStyle}">
             <Grid.Row>2</Grid.Row>
             <TextBox.FontSize>17</TextBox.FontSize>
             <TextBox.Margin>10,47,10,23</TextBox.Margin>
@@ -59,26 +86,25 @@
             <TextBlock.Text>your password</TextBlock.Text>
         </TextBlock>
 
-        <PasswordBox x:Name="pass_box">
+        <PasswordBox x:Name="pass_box" Style="{StaticResource TextBlockStyle}">
             <Grid.Column>1</Grid.Column>
             <Grid.Row>3</Grid.Row>
-            <PasswordBox.FontSize>15</PasswordBox.FontSize>
+            <PasswordBox.FontSize>12</PasswordBox.FontSize>
             <PasswordBox.Margin>10,47,10,23</PasswordBox.Margin>
             <PasswordBox.MaxLength>10</PasswordBox.MaxLength>
-            <PasswordBox.Padding>2</PasswordBox.Padding>
+            <PasswordBox.Padding>5</PasswordBox.Padding>
         </PasswordBox>
+
         <!--Кнопка авторизации-->
-        <Button x:Name="sing_in" Click="sing_in_Click" Content="Sing in" Foreground="Lime" Background="#FF1B1B1B" >
-            <Grid.Column>1</Grid.Column>
-            <Button.Margin>10,10,64,24</Button.Margin>
-            <Grid.Row>4</Grid.Row>
-        </Button>
+        <Button x:Name="sing_in" Style="{StaticResource ButtonStyle}" Click="sing_in_Click"
+                Content="Sing in" HorizontalAlignment="Left" Width="254" Grid.Column="1"
+                Grid.Row="4" Margin="10 10 10 30"/>
+
 
         <!--Кнопка закрытия приложения-->
-        <Button x:Name="exit_button" Click="exit_program" Content="Exit" Foreground="Lime" Background="#FF1B1B1B" Grid.ColumnSpan="2" >
-            <Grid.Column>1</Grid.Column>
-            <Button.Margin>269,10,26,24</Button.Margin>
-            <Grid.Row>4</Grid.Row>
+        <Button x:Name="exit_button"  Style="{StaticResource ButtonStyle}" Click="exit_program"
+                Content="Exit" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" 
+                Margin="270 10 25 30">
         </Button>
 
         <Label x:Name="warning">
@@ -87,7 +113,7 @@
             <Label.Margin>0,0,71,0</Label.Margin>
         </Label>
 
-        <!--Изображения-->
+        <!--Images-->
         <!--User-->
         <Image Source="/source/images/logwin/user.png" Stretch="Uniform" Margin="9,39,26,15">
             <Grid.Column>2</Grid.Column>
@@ -101,13 +127,23 @@
         </Image>
         <Image Source="/source/images/logwin/logo.png" HorizontalAlignment="Left" Height="195" Margin="50,60,0,0" VerticalAlignment="Top" Width="277" Grid.RowSpan="3" Grid.Row="1"/>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Grid.Row>4</Grid.Row>
-            <Grid.Column>0</Grid.Column>
-            <Image x:Name="telegram_img" Height="30" Source="/source/images/logwin/logo_telegram.png" Stretch="Fill" Width="30" Margin="10 10 10 10" MouseDown="telegram_click"/>
-            <Image x:Name="instagram_img" Height="30" Source="/source/images/logwin/inst_logo.png" Stretch="Fill" Width="30" Margin="10 10 10 10" MouseDown="inst_click"/>
-            <Image x:Name="youtube_img" Height="30" Source="/source/images/logwin/youtube_logo.png" Stretch="Fill" Width="30" Margin="10 10 10 10"  MouseDown="youtube_click"/>
+        <!--References-->
+        <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image  x:Name="telegram_img" Style="{StaticResource ReferenceImageStyle}"
+                   Source="/source/images/logwin/logo_telegram.png" MouseDown="telegram_click"/>
+            <Image x:Name="instagram_img" Style="{StaticResource ReferenceImageStyle}" 
+                   Source="/source/images/logwin/inst_logo.png"/>
+            <Image x:Name="youtube_img" Style="{StaticResource ReferenceImageStyle}" 
+                   Source="/source/images/logwin/youtube_logo.png"/>
         </StackPanel>
+
+        <TextBlock x:Name="close" Grid.Column="2" Margin="47,-3,1,3" Text="×"
+                   Width="25" Padding="6 0 1 0" MouseDown="exit_program"  Cursor="Hand"
+                   MouseEnter="close_MouseEnter"/>
+
+        <Label Grid.Column="1" Content="No account? Create now." HorizontalAlignment="Left" 
+               Margin="10,72,0,0" Grid.Row="4" VerticalAlignment="Top" 
+               Width="154" FontSize="12" Foreground="Lime" Cursor="Hand"/>
     </Grid>
 
 </Window>

@@ -1,31 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Markup;
 
 namespace clicker
 {
-    /// <summary>
-    /// Interaction logic for login.xaml
-    /// </summary>
-    public partial class login : Window
+    public partial class LoginWindow : Window
     {
-        public static login Window;
-        public login()
+        public LoginWindow()
         {
-            Window = this;
-            InitializeComponent();
+            ((IComponentConnector)this).InitializeComponent();
         }
 
         private void sing_in_Click(object sender, RoutedEventArgs e)
@@ -59,7 +44,7 @@ namespace clicker
         private void window_moving(object sender, MouseButtonEventArgs e)
         {
             if(Mouse.LeftButton == MouseButtonState.Pressed) 
-                login.Window.DragMove();
+                this.DragMove();
         }
 
         private void telegram_click(object sender, MouseButtonEventArgs e)
@@ -76,6 +61,11 @@ namespace clicker
         {
             if (Mouse.LeftButton == MouseButtonState.Pressed)
                 Process.Start(new ProcessStartInfo("https://www.youtube.com/@artxmixx") { UseShellExecute = true });
+        }
+
+        private void close_MouseEnter(object sender, MouseEventArgs e)
+        {
+            
         }
     }
 }
