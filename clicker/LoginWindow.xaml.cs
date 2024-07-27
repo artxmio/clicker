@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Markup;
+using System.Windows.Media;
 
 namespace clicker
 {
@@ -36,17 +37,17 @@ namespace clicker
             Application.Current.Shutdown();
         }
 
-        /// <summary>
-        /// Перемешения окна
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void window_moving(object sender, MouseButtonEventArgs e)
         {
             if(Mouse.LeftButton == MouseButtonState.Pressed) 
                 this.DragMove();
         }
 
+        /// <summary>
+        /// переделать на что-то внятное
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void telegram_click(object sender, MouseButtonEventArgs e)
         {
             if (Mouse.LeftButton == MouseButtonState.Pressed)
@@ -66,6 +67,24 @@ namespace clicker
         private void close_MouseEnter(object sender, MouseEventArgs e)
         {
             
+        }
+
+
+        private void ref_to_registration_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ref_to_registration.Foreground = Brushes.AliceBlue;
+        }
+
+        private void ref_to_registration_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ref_to_registration.Foreground = Brushes.Lime;
+        }
+
+        private void ref_to_registration_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var registration_window = new RegistrationWindow();
+            registration_window.Show();
+            this.Close();
         }
     }
 }

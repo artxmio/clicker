@@ -141,9 +141,10 @@
                    Width="25" Padding="6 0 1 0" MouseDown="exit_program"  Cursor="Hand"
                    MouseEnter="close_MouseEnter"/>
 
-        <Label Grid.Column="1" Content="No account? Create now." HorizontalAlignment="Left" 
+        <Label x:Name="ref_to_registration" Grid.Column="1" Content="No account? Create now." HorizontalAlignment="Left" 
                Margin="10,72,0,0" Grid.Row="4" VerticalAlignment="Top" 
-               Width="154" FontSize="12" Foreground="Lime" Cursor="Hand"/>
+               Width="145" FontSize="12" Foreground="Lime" Cursor="Hand" 
+               MouseEnter="ref_to_registration_MouseEnter" MouseLeave="ref_to_registration_MouseLeave" MouseDown="ref_to_registration_MouseDown" />
     </Grid>
 
 </Window>
