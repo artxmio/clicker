@@ -19,6 +19,9 @@
         <Style x:Key="TextBlockStyle">
             <Setter Property="Control.Background" Value="#FF1B1B1B"/>
             <Setter Property="Control.BorderBrush" Value="#FF1B1B1B"/>
+            <Setter Property="Control.Foreground" Value="#FF00FF00"/>
+            <Setter Property="Control.FontSize" Value="15"/>
+            <Setter Property="Control.Padding" Value="3"/>
         </Style>
 
         <!--Reference Image Style-->
@@ -69,9 +72,8 @@
             <TextBlock.Margin>10,22,94,58</TextBlock.Margin>
             <TextBlock.Text>your login</TextBlock.Text>
         </TextBlock>
-        <TextBox x:Name="log_box" Grid.Column="1"
+        <TextBox x:Name="log_box" Grid.Column="1" Grid.Row="2"
                  Style="{StaticResource TextBlockStyle}">
-            <Grid.Row>2</Grid.Row>
             <TextBox.FontSize>17</TextBox.FontSize>
             <TextBox.Margin>10,47,10,23</TextBox.Margin>
             <TextBox.Padding>2</TextBox.Padding>
@@ -89,9 +91,9 @@
         <PasswordBox x:Name="pass_box" Style="{StaticResource TextBlockStyle}">
             <Grid.Column>1</Grid.Column>
             <Grid.Row>3</Grid.Row>
-            <PasswordBox.FontSize>12</PasswordBox.FontSize>
+            <PasswordBox.PasswordChar>*</PasswordBox.PasswordChar>
             <PasswordBox.Margin>10,47,10,23</PasswordBox.Margin>
-            <PasswordBox.MaxLength>10</PasswordBox.MaxLength>
+            <PasswordBox.MaxLength>24</PasswordBox.MaxLength>
             <PasswordBox.Padding>5</PasswordBox.Padding>
         </PasswordBox>
 
@@ -148,7 +150,7 @@
                Width="145" FontSize="12" Foreground="Lime" Cursor="Hand" 
                MouseEnter="ref_to_registration_MouseEnter" 
                MouseLeave="ref_to_registration_MouseLeave" 
-               MouseDown="ref_to_registration_MouseDown" />
+               MouseDown="ref_to_registration_MouseDown"/>
     </Grid>
 
 </Window>
