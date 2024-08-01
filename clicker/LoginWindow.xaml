@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:clicker"
         xmlns:validation="clr-namespace:clicker.Validations"
         mc:Ignorable="d"
-        Title="Login" Height="414" Width="765"
+        Title="Login" Height="410" Width="765"
         FontSize="20"
         WindowStartupLocation="CenterScreen" 
         FontFamily="Yu Gothic UI Semibold" 
@@ -126,22 +126,22 @@
 
         <!--Images-->
         <!--User-->
-        <Image Grid.Column="2" Grid.Row="2" Source="/source/images/logwin/user.png" Stretch="Uniform" Margin="9,39,26,15"/>
+        <Image Grid.Column="2" Grid.Row="2" Source="/Source/images/logwin/user.png" Stretch="Uniform" Margin="9,39,26,15"/>
 
         <!--Lock-->
-        <Image  Grid.Column="2" Grid.Row="3" Source="/source/images/logwin/lock.png" Stretch="Uniform" Margin="10,43,27,19"/>
+        <Image  Grid.Column="2" Grid.Row="3" Source="/Source/images/logwin/lock.png" Stretch="Uniform" Margin="10,43,27,19"/>
 
         <!--Logo-->
-        <Image Source="/source/images/logwin/logo.png" HorizontalAlignment="Left" Height="195" Margin="50,60,0,0" VerticalAlignment="Top" Width="277" Grid.RowSpan="3" Grid.Row="1"/>
+        <Image Source="/Source/images/logwin/logo.png" HorizontalAlignment="Left" Height="195" Margin="50,60,0,0" VerticalAlignment="Top" Width="277" Grid.RowSpan="3" Grid.Row="1"/>
 
         <!--References-->
         <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
             <Image  x:Name="telegram_img" Style="{StaticResource ReferenceImageStyle}"
-                   Source="/source/images/logwin/logo_telegram.png" MouseDown="telegram_click"/>
+                   Source="/Source/images/logwin/logo_telegram.png" MouseDown="telegram_click"/>
             <Image x:Name="instagram_img" Style="{StaticResource ReferenceImageStyle}" 
-                   Source="/source/images/logwin/inst_logo.png"/>
+                   Source="/Source/images/logwin/github_logo.png" MouseDown="github_click"/>
             <Image x:Name="youtube_img" Style="{StaticResource ReferenceImageStyle}" 
-                   Source="/source/images/logwin/youtube_logo.png"/>
+                   Source="/Source/images/logwin/youtube_logo.png" MouseDown="youtube_click"/>
         </StackPanel>
 
         <!--Exit-->
@@ -157,6 +157,9 @@
                MouseEnter="ref_to_registration_MouseEnter" 
                MouseLeave="ref_to_registration_MouseLeave" 
                MouseDown="ref_to_registration_MouseDown"/>
+        
+        <!--Warning label about invalid login and password-->
+        <Label x:Name="warning_label" Foreground="Red" FontSize="12" Grid.Column="1" Content="" Margin="10,87,30,0" Grid.Row="3" VerticalAlignment="Top" Height="28" Grid.RowSpan="2"/>
     </Grid>
 
 </Window>

@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="source\images\logwin\inst_logo.png" />
+    <None Remove="source\images\logwin\github_logo.png" />
     <None Remove="source\images\logwin\lock.png" />
     <None Remove="source\images\logwin\logo.png" />
     <None Remove="source\images\logwin\logo_telegram.png" />
@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="source\images\logwin\inst_logo.png">
+    <Content Include="source\images\logwin\github_logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="source\images\logwin\lock.png">
@@ -36,6 +36,10 @@
     <Content Include="source\images\logwin\youtube_logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="App.xaml" />
   </ItemGroup>
 
 </Project>

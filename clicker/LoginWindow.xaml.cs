@@ -1,6 +1,7 @@
 ﻿using clicker.Models;
 using System.Diagnostics;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Markup;
 using System.Windows.Media;
@@ -20,9 +21,14 @@ namespace clicker
 
         private void sing_in_Click(object sender, RoutedEventArgs e)
         {
-            var main_window = new MainWindow();
-            main_window.Show();
-            this.Close();
+            if (user.IsValid())
+            {
+                var main_window = new MainWindow();
+                main_window.Show();
+                this.Close();
+            }
+            else
+                warning_label.Content = "Please, enter a valid login and password";
         }
 
         private void exit_program(object sender, RoutedEventArgs e)
@@ -36,20 +42,15 @@ namespace clicker
                 this.DragMove();
         }
 
-        /// <summary>
-        /// переделать на что-то внятное
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void telegram_click(object sender, MouseButtonEventArgs e)
         {
             if (Mouse.LeftButton == MouseButtonState.Pressed)
-                Process.Start(new ProcessStartInfo("https://t.me/temikgamecompany") { UseShellExecute = true });
+                Process.Start(new ProcessStartInfo("https://t.me/artxmix") { UseShellExecute = true });
         }
-        private void inst_click(object sender, MouseButtonEventArgs e)
+        private void github_click(object sender, MouseButtonEventArgs e)
         {
             if (Mouse.LeftButton == MouseButtonState.Pressed)
-                Process.Start(new ProcessStartInfo("https://www.instagram.com/no.needany?igsh=M3hoaHRqMmg1Njlw") { UseShellExecute = true });
+                Process.Start(new ProcessStartInfo("https://github.com/artxmio") { UseShellExecute = true });
         }
         private void youtube_click(object sender, MouseButtonEventArgs e)
         {
@@ -61,7 +62,6 @@ namespace clicker
         {
             close.Foreground = Brushes.Red;
         }
-
 
         private void ref_to_registration_MouseEnter(object sender, MouseEventArgs e)
         {

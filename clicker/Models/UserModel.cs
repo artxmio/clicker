@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 using System.Windows.Controls;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace clicker.Models
 {
@@ -21,14 +22,13 @@ namespace clicker.Models
         {
             get
             {
-                string error = String.Empty;
+                string error = string.Empty;
 
                 if (login is not null && password is not null)
                     switch (columnName)
                     {
                         case "login":
-                            string value = login;
-                            if (!regex.IsMatch(value))
+                            if (!regex.IsMatch(login))
                                 error = "Invalid login format";
                             break;
                         case "password":
@@ -49,7 +49,13 @@ namespace clicker.Models
             this.password = password;
         }
 
+        public bool IsValid()
+        {
+            if (login is not null && password is not null)
+                if (regex.IsMatch(login) && regex.IsMatch(password))
+                    return true;
 
-
+            return false;
+        }
     }
 }
