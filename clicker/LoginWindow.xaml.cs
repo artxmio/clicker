@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using clicker.Models;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Markup;
@@ -8,24 +9,17 @@ namespace clicker
 {
     public partial class LoginWindow : Window
     {
+        readonly UserModel user;
         public LoginWindow()
         {
             ((IComponentConnector)this).InitializeComponent();
+
+            user = new UserModel();
+            this.DataContext = user;
         }
 
         private void sing_in_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(log_box.Text))
-            {
-                warning.Content = "Warning: Login field is empty";
-                return;
-            }
-            if (String.IsNullOrEmpty(pass_box.Password))
-            {
-                warning.Content = "Warning: Password field is empty";
-                return;
-            }
-
             var main_window = new MainWindow();
             main_window.Show();
             this.Close();
@@ -38,7 +32,7 @@ namespace clicker
 
         private void window_moving(object sender, MouseButtonEventArgs e)
         {
-            if(Mouse.LeftButton == MouseButtonState.Pressed) 
+            if (Mouse.LeftButton == MouseButtonState.Pressed)
                 this.DragMove();
         }
 
