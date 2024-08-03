@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:clicker"
         xmlns:validation="clr-namespace:clicker.Validations"
+        xmlns:vm="clr-namespace:clicker.ViewModels"
         mc:Ignorable="d"
         Title="Login" Height="410" Width="765"
         FontSize="20"
@@ -14,6 +15,10 @@
         ResizeMode="NoResize"
         MouseDown="window_moving"
         RenderOptions.BitmapScalingMode="HighQuality">
+    <Window.DataContext>
+        <vm:LoginVM/>
+    </Window.DataContext>
+
     <Window.Resources>
         <!--TextBox Style-->
         <Style x:Key="TextBoxStyle">
@@ -23,14 +28,12 @@
             <Setter Property="Control.FontSize" Value="15"/>
             <Setter Property="Control.Padding" Value="3"/>
 
-
             <Style.Triggers>
                 <Trigger Property="Validation.HasError" Value="True">
                     <Setter Property="TextBox.ToolTip" 
                                     Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(Validation.Errors)/ErrorContent}"/>
                 </Trigger>
             </Style.Triggers>
-
         </Style>
 
         <!--Reference Image Style-->
@@ -114,15 +117,18 @@
         </TextBox>
 
         <!--Кнопка авторизации-->
-        <Button x:Name="sing_in" Style="{StaticResource ButtonStyle}" Click="sing_in_Click"
+        <Button x:Name="sing_in" Style="{StaticResource ButtonStyle}"
                 Content="Sing in" HorizontalAlignment="Left" Width="254" Grid.Column="1"
-                Grid.Row="4" Margin="10 10 10 30"/>
+                Grid.Row="4" Margin="10 10 10 30"
+                Command="{Binding login_sing_in_command}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
 
         <!--Кнопка закрытия приложения-->
-        <Button x:Name="exit_button"  Style="{StaticResource ButtonStyle}" Click="exit_program"
+        <Button x:Name="exit_button"  Style="{StaticResource ButtonStyle}"
                 Content="Exit" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" 
-                Margin="270 10 25 30">
-        </Button>
+                Margin="270 10 25 30"
+                Command="{Binding login_close_command}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
 
         <!--Images-->
         <!--User-->
@@ -144,12 +150,6 @@
                    Source="/Source/images/logwin/youtube_logo.png" MouseDown="youtube_click"/>
         </StackPanel>
 
-        <!--Exit-->
-        <TextBlock x:Name="close" Grid.Column="2" Margin="47,-3,1,3" Text="×"
-                   Width="25" Padding="6 0 1 0"  Cursor="Hand"
-                   MouseDown="exit_program" 
-                   MouseEnter="close_MouseEnter" MouseLeave="close_MouseLeave"/>
-
         <!--Ref to create new account-->
         <Label x:Name="ref_to_registration" Grid.Column="1" Content="No account? Create now." HorizontalAlignment="Left" 
                Margin="10,77,0,0" Grid.Row="4" VerticalAlignment="Top" 
@@ -157,7 +157,7 @@
                MouseEnter="ref_to_registration_MouseEnter" 
                MouseLeave="ref_to_registration_MouseLeave" 
                MouseDown="ref_to_registration_MouseDown"/>
-        
+
         <!--Warning label about invalid login and password-->
         <Label x:Name="warning_label" Foreground="Red" FontSize="12" Grid.Column="1" Content="" Margin="10,87,30,0" Grid.Row="3" VerticalAlignment="Top" Height="28" Grid.RowSpan="2"/>
     </Grid>

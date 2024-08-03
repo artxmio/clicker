@@ -11,7 +11,6 @@ namespace clicker.Models
     {
         public string login { get; set; }
         public string password { get; set; }
-
         public string Error
         {
             get { throw new NotImplementedException(); }
@@ -39,7 +38,6 @@ namespace clicker.Models
                 return error;
             }
         }
-
         public UserModel()
         { }
 

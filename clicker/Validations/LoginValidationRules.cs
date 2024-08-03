@@ -20,12 +20,16 @@ namespace clicker.Validations
             if (!regex.IsMatch(input))
             {
                 if (input.Length < 5 || input.Length > 25)
+                {
                     return new ValidationResult(false, "Login have atleast 5 characters and maximum 25 characters");
+                }
 
                 return new ValidationResult(false, "Enter a valid login");
             }
             else
+            {
                 return ValidationResult.ValidResult;
+            }
         }
     }
 }

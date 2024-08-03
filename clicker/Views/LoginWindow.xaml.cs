@@ -1,4 +1,5 @@
 ﻿using clicker.Models;
+using clicker.Views;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,30 +11,9 @@ namespace clicker
 {
     public partial class LoginWindow : Window
     {
-        readonly UserModel user;
         public LoginWindow()
         {
             ((IComponentConnector)this).InitializeComponent();
-
-            user = new UserModel();
-            this.DataContext = user;
-        }
-
-        private void sing_in_Click(object sender, RoutedEventArgs e)
-        {
-            if (user.IsValid())
-            {
-                var main_window = new MainWindow();
-                main_window.Show();
-                this.Close();
-            }
-            else
-                warning_label.Content = "Please, enter a valid login and password";
-        }
-
-        private void exit_program(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
         }
 
         private void window_moving(object sender, MouseButtonEventArgs e)
@@ -47,20 +27,17 @@ namespace clicker
             if (Mouse.LeftButton == MouseButtonState.Pressed)
                 Process.Start(new ProcessStartInfo("https://t.me/artxmix") { UseShellExecute = true });
         }
+
         private void github_click(object sender, MouseButtonEventArgs e)
         {
             if (Mouse.LeftButton == MouseButtonState.Pressed)
                 Process.Start(new ProcessStartInfo("https://github.com/artxmio") { UseShellExecute = true });
         }
+
         private void youtube_click(object sender, MouseButtonEventArgs e)
         {
             if (Mouse.LeftButton == MouseButtonState.Pressed)
                 Process.Start(new ProcessStartInfo("https://www.youtube.com/@artxmixx") { UseShellExecute = true });
-        }
-
-        private void close_MouseEnter(object sender, MouseEventArgs e)
-        {
-            close.Foreground = Brushes.Red;
         }
 
         private void ref_to_registration_MouseEnter(object sender, MouseEventArgs e)
@@ -78,11 +55,6 @@ namespace clicker
             var registration_window = new RegistrationWindow();
             registration_window.Show();
             this.Close();
-        }
-
-        private void close_MouseLeave(object sender, MouseEventArgs e)
-        {
-            close.Foreground = Brushes.Linen;
         }
     }
 }
